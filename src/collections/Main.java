@@ -50,7 +50,9 @@ public class Main {
         sellItem(myBasket, "car", 1);
         System.out.println(myBasket);
 
-        sellItem(myBasket, "car", 1);
+        if(sellItem(myBasket, "car", 1) != 1){
+            System.out.println("There are no more cars left in the stock. Sorry");
+        }
         sellItem(myBasket, "spanner", 4);
         System.out.println(myBasket);
 
@@ -67,7 +69,7 @@ public class Main {
     public static int sellItem(Basket basket, String item, int quantity){
         StockItem stockItem = stockList.get(item);
         if(stockItem == null){
-            System.out.println("We don't sell the" + item + "in our store, currently");
+            System.out.println("We don't sell the " + item + " in our store, currently");
             return 0;
         }
         if(stockList.sellStock(item, quantity) != 0){

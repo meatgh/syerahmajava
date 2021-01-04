@@ -1,8 +1,9 @@
 package collections;
 
 import java.util.Collections;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Basket {
 
@@ -11,7 +12,7 @@ public class Basket {
 
     public Basket(String name) {
         this.name = name;
-        this.list = new HashMap<>();
+        this.list = new TreeMap<>();
     }
     public int addToBasket(StockItem item, int quantity){
         if((item != null) && (quantity > 0)){
